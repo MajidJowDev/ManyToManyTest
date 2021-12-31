@@ -43,4 +43,11 @@ public class Student extends BaseEntity {
     public void setCourses(Set<Course> courses) {
         this.courses = courses;
     }
+
+    public Student addCourse(Course course){
+        course.getStudents().add(this);
+        this.courses.add(course);
+
+        return this;
+    }
 }
